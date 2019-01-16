@@ -12,6 +12,10 @@ import "antd-mobile/dist/antd-mobile.css";
 import { register } from "../../reducers/user.redux";
 import { connect } from "react-redux";
 
+@connect(
+  state => state.user,
+  {register}
+)
 class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -45,6 +49,7 @@ class Register extends React.Component {
         <Logo />
         <WingBlank>
           <List>
+            {this.props.msg? <p>{this.props.msg}</p>:null}
             <InputItem
               placeholder="input your name"
               clear
