@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from '../../components/Logo';
+import Logo from '../../components/logo/Logo';
 import { List, InputItem, Button, WhiteSpace, WingBlank } from "antd-mobile";
 import "antd-mobile/dist/antd-mobile.css";
 class Login extends React.Component {
