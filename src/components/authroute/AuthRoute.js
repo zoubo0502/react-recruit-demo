@@ -20,7 +20,7 @@ class AuthRoute extends React.Component {
     })
   }
   render() {
-    return <p>auth</p>
+    return null;
   }
 }
 
