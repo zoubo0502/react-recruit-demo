@@ -8,12 +8,25 @@ class Register extends React.Component {
     super(props)
   
     this.state = {
-       type:'genuis'
+      name:'',
+      password:'',
+      repeatPassword:'',
+      type:'genuis'
     }
   }
   
-  login() {
+  backToLogin() {
     this.props.history.push('/login')
+  }
+
+  registerUser() {
+    console.log(this.state)
+  }
+
+  handleChange(key, value) {
+    this.setState({
+      [key]: value
+    })
   }
   render() {
     const RadioItem = Radio.RadioItem;
@@ -22,29 +35,29 @@ class Register extends React.Component {
         <Logo />
         <WingBlank>
           <List>
-            <InputItem placeholder="input your name" clear>
+            <InputItem placeholder="input your name" clear onChange={(value)=>this.handleChange('name',value)}>
               Name
             </InputItem>
             <WhiteSpace />
-            <InputItem placeholder="input your password" type="password">
+            <InputItem placeholder="input your password" type="password" onChange={(value)=>this.handleChange('password',value)}>
               Password
             </InputItem>
             <WhiteSpace />
-            <InputItem placeholder="confirm your password" type="password">
+            <InputItem placeholder="confirm your password" type="password" onChange={(value)=>this.handleChange('repeatPassword',value)}>
               Password
             </InputItem>
             <WhiteSpace />
-            <RadioItem checked={this.state.type==='genuis'}>
+            <RadioItem checked={this.state.type==='genuis'} onClick={()=>this.handleChange('type', 'genuis')}>
               Genuis
             </RadioItem >
-            <RadioItem checked={this.state.type==='boss'}>
+            <RadioItem checked={this.state.type==='boss'} onClick={()=>this.handleChange('type', 'boss')}>
               Boss
             </RadioItem >
           </List>
           <WhiteSpace />
-          <Button type="primary">Register</Button>
+          <Button type="primary" onClick={()=>this.registerUser()}>Register</Button>
           <WhiteSpace />
-          <Button type="primary" onClick={()=>this.login()}>Back to Login</Button>
+          <Button type="primary" onClick={()=>this.backToLogin()}>Back to Login</Button>
           <WhiteSpace />
         </WingBlank>
       </div>
