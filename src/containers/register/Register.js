@@ -8,7 +8,6 @@ import {
   WingBlank,
   Radio
 } from "antd-mobile";
-import "antd-mobile/dist/antd-mobile.css";
 import { register } from "../../reducers/user.redux";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
