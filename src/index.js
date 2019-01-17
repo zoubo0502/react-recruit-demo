@@ -11,6 +11,8 @@ import AuthRoute from "./components/authroute/AuthRoute";
 import Bossinfo from "./containers/bossinfo/bossinfo";
 import Geniusinfo from "./containers/genuisinfo/geniusinfo";
 import "antd-mobile/dist/antd-mobile.css";
+import "./index.css";
+import Dashboard from "./components/dashboard/dashboard";
 
 const store = createStore(
   reducer,
@@ -20,21 +22,17 @@ const store = createStore(
   )
 );
 
-function Boss() {
-  return <p>boss</p>;
-}
-
 render(
   <Provider store={store}>
     <BrowserRouter>
       <div>
         <AuthRoute />
         <Switch>
-          <Route path="/boss" component={Boss} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/bossinfo" component={Bossinfo} />
           <Route path="/geniusinfo" component={Geniusinfo} />
+          <Route component={Dashboard} />
         </Switch>
       </div>
     </BrowserRouter>

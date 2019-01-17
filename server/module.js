@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 //连接mongo
-const DB_URL = "mongodb://127.0.0.1:27017/react-recruit-demo";
+const DB_URL = "mongodb://127.0.0.1:27017/react-recruit-demo-01";
 mongoose.connect(DB_URL);
 mongoose.connection.on("connected", () => console.log("mongo connect success"));
 

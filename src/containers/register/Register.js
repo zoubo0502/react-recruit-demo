@@ -22,7 +22,7 @@ class Register extends React.Component {
       name: "",
       password: "",
       repeatPassword: "",
-      type: "genuis"
+      type: "genius"
     };
   }
 
@@ -74,8 +74,8 @@ class Register extends React.Component {
             </InputItem>
             <WhiteSpace />
             <RadioItem
-              checked={this.state.type === "genuis"}
-              onClick={() => this.handleChange("type", "genuis")}
+              checked={this.state.type === "genius"}
+              onClick={() => this.handleChange("type", "genius")}
             >
               Genuis
             </RadioItem>
