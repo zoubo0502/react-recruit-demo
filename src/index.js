@@ -18,17 +18,17 @@ const store = createStore(
 );
 
 function Boss() {
-  return <p>boss</p>
+  return <p>boss</p>;
 }
 
 render(
   <Provider store={store}>
     <BrowserRouter>
       <div>
-        <AuthRoute></AuthRoute>
-        <Route path="/boss" component={Boss}></Route>
-        <Route path="/login" component={Login}></Route>
-        <Route path="/register" component={Register}></Route> 
+        <AuthRoute />
+        <Route path="/boss" component={Boss} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
       </div>
     </BrowserRouter>
   </Provider>,

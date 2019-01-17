@@ -11,15 +11,14 @@ import {
 import "antd-mobile/dist/antd-mobile.css";
 import { register } from "../../reducers/user.redux";
 import { connect } from "react-redux";
-import { Redirect } from 'react-router-dom'
+import { Redirect } from "react-router-dom";
 @connect(
   state => state.user,
-  {register}
+  { register }
 )
 class Register extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       name: "",
       password: "",
@@ -46,11 +45,11 @@ class Register extends React.Component {
     const RadioItem = Radio.RadioItem;
     return (
       <div>
-        {this.props.redirectTo? <Redirect to={this.props.redirectTo}></Redirect>:null}
+        {this.props.redirectTo ? <Redirect to={this.props.redirectTo} /> : null}
         <Logo />
         <WingBlank>
           <List>
-            {this.props.msg? <p>{this.props.msg}</p>:null}
+            {this.props.msg ? <p>{this.props.msg}</p> : null}
             <InputItem
               placeholder="input your name"
               clear
