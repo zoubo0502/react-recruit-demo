@@ -8,7 +8,7 @@ const LOAD_DATA = "LOAD_DATA";
 const initState = {
   redirectTo: "",
   msg: "",
-  user: "",
+  name: "",
   type: ""
 };
 // reducer
@@ -84,11 +84,15 @@ export function register({ name, password, repeatPassword, type }) {
 export function update(data) {
   return dispatch => {
     axios.post("/user/update", data).then(res => {
-      if (res.status == 200 && res.data.code === 0) {
+      if (res.status === 200 && res.data.code === 0) {
         dispatch(authSuccess(res.data.data));
       } else {
         dispatch(errorMessage(res.data.msg));
       }
     });
   };
+}
+
+export function logoutSubmit() {
+  return { type: LOGOUT };
 }
