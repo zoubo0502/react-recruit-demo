@@ -13,6 +13,7 @@ import Geniusinfo from "./containers/genuisinfo/geniusinfo";
 import "antd-mobile/dist/antd-mobile.css";
 import "./index.css";
 import Dashboard from "./components/dashboard/dashboard";
+import Chat from "./components/chat/chat";
 
 const store = createStore(
   reducer,
@@ -32,6 +33,7 @@ render(
           <Route path="/register" component={Register} />
           <Route path="/bossinfo" component={Bossinfo} />
           <Route path="/geniusinfo" component={Geniusinfo} />
+          <Route path="/chat/:user" component={Chat} />
           <Route component={Dashboard} />
         </Switch>
       </div>
