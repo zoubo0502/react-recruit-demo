@@ -2,6 +2,7 @@ const express = require("express");
 const Router = express.Router();
 const model = require("./module");
 const User = model.getModel("user");
+const Chat = model.getModel("chat");
 const utils = require("utility");
 
 Router.get("/list", function(req, res) {
@@ -73,6 +74,15 @@ Router.post("/update", function(req, res) {
       body
     );
     return res.json({ code: 0, data });
+  });
+});
+
+Router.get("/getmsglist", function(req, res) {
+  const { userid } = req.cookies;
+  Chat.find({}, function(err, doc) {
+    if (!err) {
+      return res.json({ code: 0, msgs: doc });
+    }
   });
 });
 
